@@ -11,11 +11,11 @@ def isAnagram(string1, string2):
     >>> isAnagram("Listen", "Silent")
     True
     >>> isAnagram("Astronomer", "Moon starer")
-    False
+    True
     """
     
-    string1 = string1.lower()
-    string2 = string2.lower()
+    string1 = string1.lower().replace(" ", "")
+    string2 = string2.lower().replace(" ", "")
 
     if(len(string1) != len(string2)):
         return False
