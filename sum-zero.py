@@ -1,4 +1,4 @@
-class SumZero(object):
+class SumZero:
     def sumZero(self, arr):
         if len(arr) == 0:
             return None

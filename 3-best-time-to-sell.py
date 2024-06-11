@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def bestTimeToSell(self, prices):
         """Leetcode"""
 

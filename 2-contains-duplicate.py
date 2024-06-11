@@ -1,7 +1,7 @@
 
 # Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
-class Solution1(object):
+class Solution1:
     def containsDuplicate(self, nums):
         """Leetcode hell"""
         if (len(nums) <= 1):
@@ -20,7 +20,7 @@ class Solution1(object):
 # It's also O(N) like my solution above but it's a little less code.
 
 
-class Solution2(object):
+class Solution2:
     def containsDuplicate(self, nums):
         """Leetcode"""
 
