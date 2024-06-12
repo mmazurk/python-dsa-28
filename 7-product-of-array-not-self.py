@@ -1,23 +1,23 @@
+# This problem has a math trick that involves calculating
+# all the numbers multiplied in order, from the start
+# and all the numbers multiplied in order, backwards from the end
+# Why?
+# if you know this, you can pinpoint any part of the array
+# and you can multiply the before (prefix) by the after (posfix)
+# to get the multiple without using division
+# [1, 2, 3, 4]
+# For example, you want 1 x 2 x 4 for the 3 slot
+# So you figure out what 1 x 2 is (prefix)
+# And you multiply that by 4 x 1 (postfix)
+# Even worse, you store them in an answer array so you don't take up any more space
+
+# Remember: The answer array is storing the products of all elements BEFORE the current index. Not at the current index; you got confused about this
+
+
 class Solution:
     def productArray(self, nums):
 
-        # This is how you create a list with a certain amount of members
-        # Here you are making a list that is len(nums) long and filled with 1
-
         answer = [1] * (len(nums))
-
-        # This problem has a math trick that involves calculating
-        # all the numbers multiplied in order, from the start
-        # and all the numbers multiplied in order, backwards from the end
-        # Why?
-        # if you know this, you can pinpoint any part of the array
-        # and you can multiply the before (prefix) by the after (posfix)
-        # to get the multiple without using division
-        # [1, 2, 3, 4]
-        # For example, you want 1 x 2 x 4 for the 3 slot
-        # So you figure out what 1 x 2 is (prefix)
-        # And you multiply that by 4 x 1 (postfix)
-        # Even worse, you store them in an answer array so you don't take up any more space
 
         prefix = 1
         for i in range(len(nums)):

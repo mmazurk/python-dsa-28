@@ -1,6 +1,10 @@
 class Solution:
     """Leetcode hell"""
 
+# This is dynamic programming using tabulation
+# Tabluation is usually iteration and memoization involves recursion (to prevent expensive caluclation)
+# This has optimal substructure and overlapping subproblems
+
 # This was really hard for me to wrap my brain around because it's new
 # This method keeps track of two things:
 # A global sum and current sum
