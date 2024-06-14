@@ -21,34 +21,37 @@ numbers[1::2]
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 
 # 1. Last 4 elements
+letters[-4::]
 
 # 2. First 4 elements using negative indices
-
+letters[:-4:]
 
 # 3. All elements except the last one
-
+letters[:-1]
 
 # 4. All elements in reverse order
-
+letters[::-1]
 
 # 5. Every second element in reverse order
-
+letters[::-2]
 
 # Exercise 3
 sequence = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
 # 1. Every third element
-
+sequence[2::3]
 
 # 2. Elements from index 2 to the end with a step of 2
-
+sequence[2::2]
 
 # 3. Elements from index 5 to index 1 in reverse order
+sequence[5:0:-1]
 
 # 4. Elements from index 6 to the start in reverse order
-
+sequence[5:0:-1]
 
 # 5. Every fourth element from end to start
+sequence[::-4]
 
 # Exercise 4
 mix = ['a', 1, 'b', 2, 'c', 3, 'd', 4, 'e', 5]
