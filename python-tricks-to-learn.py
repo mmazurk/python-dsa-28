@@ -5,7 +5,6 @@ import random
 count = [0] * 26
 nonesuch = [None] * 10
 
-
 # make a list (array) of things a key in a dict
 
 collection = {}
