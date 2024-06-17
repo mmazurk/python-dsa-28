@@ -52,4 +52,4 @@ class Brute:
 
 
 solution = Solution()
-print(solution.productArray([1, 2, 3, 4]))
+print(solution.productArray([1, 2, 3, 4, 5]))
