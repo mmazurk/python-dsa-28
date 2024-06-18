@@ -19,10 +19,10 @@ class Solution:
         output = [intervals[0]]
 
         for start, end in intervals[1:]:
-            lastEnd = output[-1][1]
+            last_end = output[-1][1]
 
-            if start <= lastEnd:
-                output[-1][1] = max(lastEnd, end)
+            if start <= last_end:
+                output[-1][1] = max(last_end, end)
             else:
                 output.append([start, end])
 
@@ -30,4 +30,4 @@ class Solution:
 
 
 solution = Solution()
-print(solution.mergeIntervals([[1, 5], [6, 10], [2, 3]]))
+print(solution.mergeIntervals([[1, 5], [1, 10], [11, 12]]))

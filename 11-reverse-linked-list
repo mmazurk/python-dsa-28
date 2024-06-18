@@ -1,0 +1,77 @@
+
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+    def __repr__(self):
+        return f"{self.val} --> {self.next}"
+
+# I originally wanted to generate dynamic names for the nodes, but this is not ever recommended
+# Instead, just put them into a dictionaries or lists
+# That makes it easy to iterate through and set the self.next values
+
+# I also didn't understand that the __repr__ function will recursively run on {self.next}
+# So you end up getting 1 --> 2 --> 3 --> 4 --> 5 when you print the first node
+# I didn't realize that by returning just the first node from my list, the other nodes were still alive in memory
+# because they are assigned in a chain from the first node to the last
+# Lastly, my brain just doesn't understand the order of operations for reversing a linked list
+# The order is this:
+# start by establishing what is your previous_node and current_node when you are at head
+# then in the while loop
+# (1) create a variable to remember the next node, (2) set current.next to previous, (3) update previous to current
+# and (4) move to the next node
+# It seems so simple yet I am absolutely confounded when I try to do it
+
+
+class Solution(object):
+    def createList(self, items):
+        listnodes = []
+        for item in items:
+            listnodes.append(ListNode(item))
+
+        for i in range(0, len(listnodes)-1):
+            listnodes[i].next = listnodes[i+1]
+
+        return listnodes[0]
+
+    def reverseIterative(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+
+        print(head)
+
+        previous_node = None
+        current_node = head
+
+        while (current_node):
+            next_node = current_node.next
+            current_node.next = previous_node
+            previous_node = current_node
+            current_node = next_node
+
+        return previous_node
+
+# I don't even know where to begin with this; I just need to study it.
+
+    def reverseRecursive(self, head):
+        print(head)
+
+        if not head:
+            return None
+
+        newHead = head
+        if head.next:
+            newHead = self.reverseRecursive(head.next)
+            head.next.next = head
+        head.next = None
+
+        return newHead
+
+
+solution = Solution()
+head = solution.createList([1, 2, 3, 4, 5])
+reversed_list = solution.reverseRecursive(head)
+print(reversed_list)
