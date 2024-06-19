@@ -1,4 +1,7 @@
 
+from doctest import debug
+
+
 class ListNode(object):
     def __init__(self, val=0, next=None):
         self.val = val
@@ -24,7 +27,7 @@ class ListNode(object):
 # It seems so simple yet I am absolutely confounded when I try to do it
 
 
-class Solution(object):
+class Solution():
     def createList(self, items):
         listnodes = []
         for item in items:
@@ -54,7 +57,13 @@ class Solution(object):
 
         return previous_node
 
-# I don't even know where to begin with this; I just need to study it.
+# What you are actually doing in this:
+# is digging down with recursive calls until you figure out the new head
+# Once you do, that stays CONSTANT
+# Then when it unwinds it does the reversing of the arrows on variable = head (not newHead)
+# This is what baked your brain
+# head.next.next reverses the arrow
+# head.next erases the old arrow
 
     def reverseRecursive(self, head):
         print(head)
@@ -75,3 +84,33 @@ solution = Solution()
 head = solution.createList([1, 2, 3, 4, 5])
 reversed_list = solution.reverseRecursive(head)
 print(reversed_list)
+
+
+# Here's my diagram:
+# head = 1
+# newHead = rR(2)
+# 	head = 2
+# 	newHead = rR(3)
+# 		head = 3
+# 		newHead = rR(4)
+# 			head =4
+# 			newHead = rr(5)
+
+# Now you build the reversed list
+
+# 			head = 4
+# 			nH = 5
+# 			5.next = 4
+# 			4.next = none
+# 		head = 3
+# 		nH = 5
+# 		4.next = 3
+# 		3.next = none
+# 	head = 2
+# 	nH = 5
+# 	3.next = 2
+# 	2.next = none
+# head = 1
+# nH = 5
+# 2.next = 1
+# 1.next = none

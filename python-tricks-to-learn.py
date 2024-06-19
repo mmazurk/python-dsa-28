@@ -40,11 +40,13 @@ for item in items:
 
 results = {}
 for i in range(5):
-    # 'compute_value' would be your function
     results[f"value_{i}"] = (i)*12
 
 
 # Study this pattern because it really gets you
+# Set the conditions (previous, current)
+# Iterate and do logic you need to do (e.g., flip the arrow)
+# Then within the loop, set the conditions again
 
 head = ListNode(1)
 
@@ -56,3 +58,19 @@ while (current_node):
     current_node.next = previous_node
     previous_node = current_node
     current_node = next_node
+
+
+# This is a basic pattern you need to learn for recursion
+
+def reverse_list_recursive(lst):
+
+    if len(lst) <= 1:
+        return lst
+
+    reversed = reverse_list_recursive(lst[1:])
+    reversed.append(lst[0])
+
+    return reversed
+
+
+reverse_list_recursive([1, 2, 3, 4, 5])
