@@ -8,6 +8,9 @@ coordinates = [(1, 2), (3, 4), (5, 6)]
 # Coordinate: (3, 4)
 # Coordinate: (5, 6)
 
+for x, y in coordinates:
+    print(f"Coordinate: ({x}, {y})")
+
 # Given dictionary of student grades
 student_grades = {"Alice": 85, "Bob": 92, "Charlie": 78}
 
