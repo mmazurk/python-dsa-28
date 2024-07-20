@@ -1,4 +1,7 @@
 
+# using range()
+
+
 # create a list with x repeated y times
 
 from random import randint
